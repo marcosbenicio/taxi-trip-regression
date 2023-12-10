@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+joblib = "*"
+pandas = "==1.1.5"
+scikit-learn = "==0.24.2" 
+gunicorn = "==21.2.0"
+scipy = "==1.5.4"
+numpy = "==1.19.5"
+seaborn = "==0.11.2"
+matplotlib = "==3.3.4"
+geopy = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.6"
