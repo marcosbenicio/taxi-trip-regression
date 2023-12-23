@@ -1,0 +1,5 @@
+# Ignore all .zip files
+*.zip
+
+# Ignore everything in a folder
+data/
