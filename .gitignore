@@ -2,4 +2,7 @@
 *.zip
 
 # Ignore everything in a folder
-data/interim/*
+data/
+
+
+.python-version
