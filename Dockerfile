@@ -18,7 +18,7 @@ rm -rf /root/.cache
 COPY ["src/models/predict_model.py", "./src/models/"]
 
 # Copy the random_forest_model.joblib into the models directory inside the container
-COPY ["models/random_forest_model.joblib", "./models/"]
+COPY ["models/xgb_taxi_trip.json", "./models/"]
 
 # port our application will use
 EXPOSE 9696

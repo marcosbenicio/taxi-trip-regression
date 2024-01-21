@@ -14,12 +14,11 @@ def single_prediction(features, model):
     # Create DMatrix for XGBoost
     dmatrix = xgb.DMatrix(X)
     
-    # Make prediction
     prediction_log = model.predict(dmatrix)
-    # Convert log prediction back to original scale if necessary
+    # Convert log prediction back to original scale
     prediction = np.expm1(prediction_log)
     
-    return prediction
+    return float(prediction)
 
 # Initialize Flask app
 app = Flask('taxi_trip_duration_prediction')
@@ -33,9 +32,15 @@ def predict():
 
         # Make single prediction with JSON data
         prediction = single_prediction(trip_features, model)
+        
+        # Convert to hours, minutes and seconds
+        hours, remainder = divmod(prediction, 3600)
+        minutes, seconds = divmod(remainder, 60)
 
         # Return prediction as JSON
-        response = {'Predicted Trip Duration': prediction[0]}
+        response = {
+            'Trip Duration (hours:minutes:seconds)': f'{int(hours)}:{int(minutes)}:{int(seconds)}'
+        }
         return jsonify(response)
     
     except Exception as e:
@@ -44,3 +49,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=9696)
+    
