@@ -135,10 +135,7 @@ requests.post(url_local, json = trip).json()
 
 ## Docker and Web Service
 
-The docker image for the model was deployed to the [Render cloud service](https://render.com/), to interact with it via HTTP requests. 
-
-
-The Docker image for the model has been deployed to the [Render cloud service](https://render.com/) for interaction via HTTP requests. Navigate to the Jupyter notebook [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb), and run the following code in Section 9 to test the cloud service:  
+The Docker image for the model has been deployed to the [Render cloud service](https://render.com/) for interaction via HTTP requests. Navigate to the Jupyter notebook [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb) and run the following code in Section 9 to test the cloud service:  
 
 ```python
 # Render Clound URL
