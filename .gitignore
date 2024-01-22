@@ -2,7 +2,7 @@
 *.zip
 
 # Ignore everything in a folder
-data/
+#data/
 
 # ignore local python version from pyenv
 .python-version

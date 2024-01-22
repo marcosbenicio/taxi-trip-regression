@@ -86,7 +86,7 @@ To host the service locally using the virtual environment, run the python script
 python3 src/models/predict_model.py
 ```
 
-With the Flask application running, we can make HTTP requests to port 9696. For example, in the Jupyter notebook located in [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb), run the following code at the section 9. to test the service:
+With the Flask application running, we can make HTTP requests to port 9696. For example, in the Jupyter notebook located in [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb), and run the following code in Section 9 to test the local service: 
 
 
 ```python
@@ -123,7 +123,7 @@ sudo docker images
 sudo docker run -p 9696:9696 marcosbenicio/taxi-trip-predict
 ```
 
-With the Flask application running inside Docker, we can make HTTP requests to port 9696. For example, in the Jupyter notebook located in [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb),run the following code at the section 9. to test the service with docker: 
+With the Flask application running inside Docker, we can make HTTP requests to port 9696. For example, in the Jupyter notebook located in [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb),and run the following code in Section 9 to test the local service with docker: 
 
 ```python
 url_local = "http://127.0.0.1:9696/predict"
@@ -133,9 +133,12 @@ trip = df_test.sample(n=1).to_dict(orient='records')[0]
 requests.post(url_local, json = trip).json()
 ```
 
-## Web Service
+## Docker and Web Service
 
-The model was deployed to the cloud using Render, to interact with it via HTTP requests. Go to the jupyter notebook [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb), run the following code at the section 9. to test the service in the cloud:  
+The docker image for the model was deployed to the [Render cloud service](https://render.com/), to interact with it via HTTP requests. 
+
+
+The Docker image for the model has been deployed to the [Render cloud service](https://render.com/) for interaction via HTTP requests. Navigate to the Jupyter notebook [`taxi-trip-duration.ipynb`](https://github.com/marcosbenicio/taxi-trip-regression/blob/main/notebooks/taxi-trip-duration.ipynb), and run the following code in Section 9 to test the cloud service:  
 
 ```python
 # Render Clound URL
